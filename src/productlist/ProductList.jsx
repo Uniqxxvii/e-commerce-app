@@ -1,12 +1,14 @@
 import "./productlist.css"
 import Product from "../product/Product"
 
-function ProductList({  }) {
+function ProductList({ products }) {
 
 
     return (
         <div className="product-list">
-            <Product />
+            {products.map((p) => (
+                <Product key={p.id} product={p} />
+            ))}
         </div>
     )
 }

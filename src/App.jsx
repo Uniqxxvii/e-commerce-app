@@ -4,11 +4,20 @@ import Header from "./header/Header"
 import ProductList from "./productlist/ProductList"
 
 function App() {
+  const [products, setProducts] = useState([
+    { id: 1, title: "Laptop", price: 999, image: "https://placeholder.com/1" },
+    { id: 2, title: "Phone", price: 499, image: "https://placeholder.com/2" },
+    { id: 3, title: "Headphones", price: 199, image: "https://placeholder.com/3" }
+  ])
+const [cart, setCart] = useState([])
+
   
   return (
     <div className="app">
       <Header />
-      <ProductList />
+      <ProductList 
+        products={products} 
+      />
     </div>
   )
 }
