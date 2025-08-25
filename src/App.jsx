@@ -2,6 +2,7 @@ import { useState } from 'react'
 import './App.css'
 import Header from "./header/Header"
 import ProductList from "./productlist/ProductList"
+import Cart from "./cart/Cart"
 
 function App() {
   const [products, setProducts] = useState([
@@ -9,6 +10,7 @@ function App() {
     { id: 2, title: "Phone", price: 499, image: "https://placeholder.com/2" },
     { id: 3, title: "Headphones", price: 199, image: "https://placeholder.com/3" }
   ])
+
   const [cart, setCart] = useState([])
 
   const addToCart = (product) => {
@@ -23,6 +25,7 @@ function App() {
         products={products}
         addToCart={addToCart} 
       />
+      <Cart cart={cart} />
     </div>
   )
 }

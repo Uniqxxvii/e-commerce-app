@@ -1,11 +1,21 @@
 import "./cart.css"
 
-function Cart({  }) {
+function Cart({ cart }) {
     
 
     return (
         <div className="cart">
-            
+           <h2 className="cart-title">Your Cart</h2>
+           <ul className="cart-items">
+            {cart.length === 0 ? (<li className="cart-empty">Cart is empty</li>
+            ) : (
+                cart.map((item, index) => (
+                    <li key={index} className="cart-item">
+                        {item.title} - ${item.price}
+                    </li>
+                ))
+            )}
+           </ul>
         </div>
     )
 }
