@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import './App.css'
 import Header from "./header/Header"
 import ProductList from "./productlist/ProductList"
@@ -11,7 +11,14 @@ function App() {
     { id: 3, title: "Headphones", price: 199, image: "https://placeholder.com/3" }
   ])
 
-  const [cart, setCart] = useState([])
+  const [cart, setCart] = useState(() => {
+    const saved = localStorage.getItem("cart")
+    return saved ? JSON.parse(saved) : []
+  })
+
+  useEffect(() => {
+    localStorage.setItem("cart", JSON.stringify(cart))
+  }, [cart])
 
   const addToCart = (product) => {
     setCart([...cart, product])
