@@ -1,7 +1,6 @@
 import "./cart.css"
 
-function Cart({ cart }) {
-    
+function Cart({ cart, removeFromCart }) {
 
     return (
         <div className="cart">
@@ -12,6 +11,10 @@ function Cart({ cart }) {
                 cart.map((item, index) => (
                     <li key={index} className="cart-item">
                         {item.title} - ${item.price}
+                        <button 
+                            className="remove-from-cart"
+                            onClick={() => removeFromCart(index)}
+                        >remove</button>
                     </li>
                 ))
             )}
