@@ -9,14 +9,19 @@ function App() {
     { id: 2, title: "Phone", price: 499, image: "https://placeholder.com/2" },
     { id: 3, title: "Headphones", price: 199, image: "https://placeholder.com/3" }
   ])
-const [cart, setCart] = useState([])
+  const [cart, setCart] = useState([])
+
+  const addToCart = (product) => {
+    setCart([...cart, product])
+  }
 
   
   return (
     <div className="app">
       <Header />
       <ProductList 
-        products={products} 
+        products={products}
+        addToCart={addToCart} 
       />
     </div>
   )
