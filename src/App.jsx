@@ -11,6 +11,8 @@ function App() {
     { id: 3, title: "Headphones", price: 199, image: "https://placeholder.com/3" }
   ])
 
+  const [isCartOpen, setIsCartOpen] = useState(false)
+
   const [cart, setCart] = useState(() => {
     const saved = localStorage.getItem("cart")
     return saved ? JSON.parse(saved) : []
@@ -28,18 +30,25 @@ function App() {
     setCart(cart.filter((_, i) => i !== index))
   }
 
+  const toggleCart = () => {
+    setIsCartOpen(!isCartOpen)
+  }
   
   return (
     <div className="app">
-      <Header />
+      <Header  
+        toggleCart={toggleCart}
+      />
       <ProductList 
         products={products}
         addToCart={addToCart} 
       />
-      <Cart 
+      {isCartOpen && <Cart 
         cart={cart}
         removeFromCart={removeFromCart}
-      />
+        isCartOpen={isCartOpen}
+        toggleCart={toggleCart}
+      />}
     </div>
   )
 }

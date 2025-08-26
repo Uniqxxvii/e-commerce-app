@@ -1,6 +1,6 @@
 import "./header.css"
 
-function Header({  }) {
+function Header({ toggleCart }) {
 
 
     return (
@@ -14,6 +14,7 @@ function Header({  }) {
             </form>
             <button 
                     className="header-cart"
+                    onClick={toggleCart}
                 >Cart</button>
         </div>
     )
