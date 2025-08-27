@@ -11,7 +11,10 @@ function Cart({ cart, removeFromCart, isCartOpen, toggleCart, increaseQty, decre
             ) : (
                 cart.map((item) => (
                     <li key={item.id} className="cart-item">
-                        {item.title} - ${item.price}
+                        <div className="cart-info">
+                            <span className="cart-title-text">{item.title}</span>
+                            <span className="cart-price">${item.price}</span>
+                        </div>
                         <div className="cart-controls">
                             <span>{item.qty}</span>
                             <button 

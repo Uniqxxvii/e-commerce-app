@@ -5,9 +5,9 @@ import Cart from "./cart/Cart"
 
 function App() {
   const [products, setProducts] = useState([
-    { id: 1, title: "Laptop", price: 999, image: "https://placeholder.com/1" },
-    { id: 2, title: "Phone", price: 499, image: "https://placeholder.com/2" },
-    { id: 3, title: "Headphones", price: 199, image: "https://placeholder.com/3" },
+    { id: 1, title: "Laptop", price: 999, image: "./images/laptop.svg" },
+    { id: 2, title: "Phone", price: 499, image: "./images/phone.svg" },
+    { id: 3, title: "Headphones", price: 199, image: "./images/headphones.svg" },
   ])
 
   const [isCartOpen, setIsCartOpen] = useState(false)

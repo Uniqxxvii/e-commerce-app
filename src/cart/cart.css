@@ -38,9 +38,10 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0.25rem 0;
+  padding: 0.5rem 0;
   border-bottom: 1px solid #333;
   color: white;
+  gap: 0.5rem;
 }
 
 .cart-controls {
@@ -79,6 +80,24 @@
 
 .cart-controls .remove-from-cart:hover {
   background: rgb(195, 90, 90);
+}
+
+.cart-info {
+  flex: 1;             
+  min-width: 0;            
+  display: flex;
+  flex-direction: column;
+}
+
+.cart-title-text {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.cart-price {
+  font-size: 0.9rem;
+  color: #aaa;
 }
 
 @media (max-width: 480px) {
