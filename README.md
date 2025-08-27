@@ -1,7 +1,8 @@
 # E-commerce Cart App
+- Pet project
 
 # Demo
-- [Live Demo Netlify]()
+- [Live Demo Netlify](https://uniqxxvii-ecomapp.netlify.app/)
 
 # Features
 - Product list (hardcoded)
@@ -23,4 +24,4 @@
 - npm run dev
 
 # Screenshot
-![E-commerce App Screenshot]()
+![E-commerce App Screenshot](./public/screenshot.png)
