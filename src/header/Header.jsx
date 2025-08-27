@@ -1,22 +1,29 @@
 import "./header.css"
 
-function Header({ toggleCart }) {
+function Header({ toggleCart, handleSearch, searchTerm }) {
 
 
     return (
-        <div className="header">
-            <form className="header-search">
-                <input className="header-input" />
+        <header className="header">
+            <div className="header-content">
+                <form className="header-search" onSubmit={(e) => e.preventDefault()}>
+                    <input 
+                        className="header-input" 
+                        placeholder="Search"
+                        value={searchTerm}
+                        onChange={handleSearch} 
+                    />
+                    <button 
+                        className="header-button" 
+                        type="submit"
+                    >Search</button>
+                </form>
                 <button 
-                    className="header-button" 
-                    type="submit"
-                >Search</button>
-            </form>
-            <button 
-                    className="header-cart"
-                    onClick={toggleCart}
-                >Cart</button>
-        </div>
+                        className="header-cart"
+                        onClick={toggleCart}
+                    >Cart</button>
+            </div>
+        </header>
     )
 }
 
