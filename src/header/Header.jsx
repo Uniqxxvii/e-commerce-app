@@ -1,6 +1,6 @@
 import "./header.css"
 
-function Header({ toggleCart, handleSearch, searchTerm }) {
+function Header({ toggleCart, handleSearch, searchTerm, totalQty }) {
 
 
     return (
@@ -21,7 +21,7 @@ function Header({ toggleCart, handleSearch, searchTerm }) {
                 <button 
                         className="header-cart"
                         onClick={toggleCart}
-                    >Cart</button>
+                    >Cart ({totalQty})</button>
             </div>
         </header>
     )

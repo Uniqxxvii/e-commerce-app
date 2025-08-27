@@ -67,6 +67,8 @@ function App() {
   const filteredProducts = products.filter((p) =>
     p.title.toLowerCase().startsWith(searchTerm.toLowerCase()) 
   )
+
+  const totalQty = cart.reduce((sum, item) => sum + item.qty, 0)
   
   return (
     <div className="app">
@@ -74,6 +76,7 @@ function App() {
         toggleCart={toggleCart}
         searchTerm={searchTerm}
         handleSearch={handleSearch}
+        totalQty={totalQty}
       />
       <ProductList 
         products={filteredProducts}
